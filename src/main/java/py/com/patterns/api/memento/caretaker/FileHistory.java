@@ -17,6 +17,12 @@ import org.slf4j.Logger;
 import py.com.patterns.api.memento.originator.File;
 import py.com.patterns.api.memento.originator.File.Status;
 
+/**
+ * The Caretaker, it will hold the state of the Originator and ask to restore it when needed
+ * https://www.baeldung.com/java-memento-design-pattern#caretaker
+ * @author test-user
+ *
+ */
 public class FileHistory {
 
 	private static final Logger log = getLogger(lookup().lookupClass());
@@ -28,6 +34,7 @@ public class FileHistory {
 	private final List<Status> fileLifeCycle; 
 	
 	public FileHistory(File file) {
+		/*LinkedHashMap to preserve insertion order*/
 		fileHistory = new LinkedHashMap<Status,File>();		
 		fileLifeCycle = new ArrayList<Status>();
 		setUpFileLifeCycle();
