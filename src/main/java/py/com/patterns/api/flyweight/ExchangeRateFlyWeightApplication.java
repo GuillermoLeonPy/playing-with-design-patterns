@@ -21,6 +21,13 @@ public class ExchangeRateFlyWeightApplication {
 				+"\n >>>>>>>>>>>>>>>>>>>");
 		
 		LocalDateTime vLocalDateTime = LocalDateTime.now();
+		/**
+		 * in thsis example the extrinsic property of the flyweight is the exchange rate id that is
+		 * a combination of the institution from which it comes and the issue date
+		 * 
+		 * BUT this example BREAKS the strict flyweight pattern in the premise that establishes that
+		 * Client objects need to pass the extrinsic state to the flyweight 
+		 */
 		ExchangeRate vExchangeRate_1 = ExchangeRateFactory.getExchangeRateFactory().createExchangeRate(
 				Currency.EUR, 
 				Currency.PYG, 
