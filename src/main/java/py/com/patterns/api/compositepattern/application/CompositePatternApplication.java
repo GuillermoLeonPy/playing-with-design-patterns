@@ -17,12 +17,13 @@ public class CompositePatternApplication {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		AbstractMachine machine = new Computer();
-		MechanicPart mechanicPart = new MechanicPart();
+		
+		AbstractMachine machine = new Computer();// -> a composite: has leaf elements - https://www.baeldung.com/java-composite-pattern#composite
+		MechanicPart mechanicPart = new MechanicPart();// -> a composite: has leaf elements - https://www.baeldung.com/java-composite-pattern#composite
 		mechanicPart.addPart(new FluidPart());
 		
 		
-		ElectronicPart electronicPart = new ElectronicPart();
+		ElectronicPart electronicPart = new ElectronicPart();// -> a composite: has leaf elements - https://www.baeldung.com/java-composite-pattern#composite
 		electronicPart.addPart(new SoftwarePart());
 		
 		List<Part> partList = new ArrayList<>();
