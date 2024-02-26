@@ -5,6 +5,8 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 import org.slf4j.Logger;
 
+import py.com.patterns.api.templatemethod.datasource.readers.TxtReaderIncomeAndExpensesReport;
+
 class BalanceApplication {
 	/*
 	https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html
@@ -23,7 +25,7 @@ class BalanceApplication {
 	private static final Logger log = getLogger(lookup().lookupClass());
 	
 	public static void main(String[] args) {
-		FileSystemReaderIncomeAndExpensesReport fileSystemBalance = new FileSystemReaderIncomeAndExpensesReport();
+		TxtReaderIncomeAndExpensesReport fileSystemBalance = new TxtReaderIncomeAndExpensesReport();
 		fileSystemBalance.loadIncomeRecords();
 		fileSystemBalance.loadExpensesRecords();
 		fileSystemBalance.performeBalance();

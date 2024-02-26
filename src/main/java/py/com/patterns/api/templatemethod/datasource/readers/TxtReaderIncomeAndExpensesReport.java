@@ -1,4 +1,4 @@
-package py.com.patterns.api.templatemethod;
+package py.com.patterns.api.templatemethod.datasource.readers;
 
 import static java.lang.invoke.MethodHandles.lookup;
 import static org.slf4j.LoggerFactory.getLogger;
@@ -13,7 +13,9 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 
-class FileSystemReaderIncomeAndExpensesReport extends LoadDataIntoIncomeAndExpensesReport {
+import py.com.patterns.api.templatemethod.LoadDataIntoIncomeAndExpensesReport;
+
+public class TxtReaderIncomeAndExpensesReport extends LoadDataIntoIncomeAndExpensesReport {
 
 	/*
 	https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html
@@ -32,7 +34,7 @@ class FileSystemReaderIncomeAndExpensesReport extends LoadDataIntoIncomeAndExpen
 	
 	private static final Logger log = getLogger(lookup().lookupClass());
 	
-	public FileSystemReaderIncomeAndExpensesReport() {
+	public TxtReaderIncomeAndExpensesReport() {
 		super();
 		log.info("\n *************************************************************"
 				+"\n FileSystemReaderIncomeAndExpensesReport class constructor"
@@ -41,6 +43,7 @@ class FileSystemReaderIncomeAndExpensesReport extends LoadDataIntoIncomeAndExpen
 	
 
 	@Override
+	public
 	void loadIncomeRecords() {
 		incomeRecords = new HashMap<String,BigDecimal>();
 		readRecordsFromFileSystem(this.incomeRecords, "income_records.txt");
@@ -51,6 +54,7 @@ class FileSystemReaderIncomeAndExpensesReport extends LoadDataIntoIncomeAndExpen
 	}
 
 	@Override
+	public
 	void loadExpensesRecords() {
 		expensesRecords = new HashMap<String,BigDecimal>();
 		readRecordsFromFileSystem(this.expensesRecords, "expenses_records.txt");

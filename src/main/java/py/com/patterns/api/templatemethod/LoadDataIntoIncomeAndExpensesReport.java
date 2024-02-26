@@ -16,7 +16,7 @@ import org.slf4j.Logger;
  * @author test-user
  *
  */
-abstract class LoadDataIntoIncomeAndExpensesReport {
+public abstract class LoadDataIntoIncomeAndExpensesReport {
 	/*
 	https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html
 	https://www.baeldung.com/java-access-modifiers
@@ -46,22 +46,22 @@ abstract class LoadDataIntoIncomeAndExpensesReport {
 		BALANCE
 	}
 	
-	Map<String,BigDecimal> incomeRecords;
-	Map<String,BigDecimal> expensesRecords;
-	Map<String,BigDecimal> balanceRecords;
+	protected Map<String,BigDecimal> incomeRecords;
+	protected Map<String,BigDecimal> expensesRecords;
+	protected Map<String,BigDecimal> balanceRecords;
 
 	/**
 	 * 
 	 */
-	abstract void loadIncomeRecords();
+	public abstract void loadIncomeRecords();
 	/**
 	 * 
 	 */
-	abstract void loadExpensesRecords();
+	public abstract void loadExpensesRecords();
 	/**
 	 * 
 	 */
-	void performeBalance() {	
+	public void performeBalance() {	
 		log.info("\n >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 				+"\n LoadDataIntoIncomeAndExpensesReport abstract class performeBalance method"
 				+"\n >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
