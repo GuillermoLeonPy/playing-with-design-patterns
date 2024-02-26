@@ -22,4 +22,12 @@ public class RequestedStatus extends StatusCommonBehaviour {
 
 	}
 
+	@Override
+	public void advance(Loan loan) {
+		// TODO Auto-generated method stub
+		super.advance(loan);//performs commmon validation tasks concerning any state, set the next state
+		/*business logic concerning the transition from this state to the next*/
+		/*persistence layer operations*/
+	}
+
 }

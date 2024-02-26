@@ -17,7 +17,6 @@ public abstract class StatusCommonBehaviour implements StatusBehaviour{
 		if(loan.getStatus().getStatus() == Status.REQUEST_DENIED || loan.getStatus().getStatus() == Status.REJECTED || loan.getStatus().getStatus() == Status.FINALIZED)
 			throw new RuntimeException("Loan in status: " + loan.getStatus() + "; can not be continued");
 		loan.setStatus(StatusLifeCycle.getStatusLifeCycle().getNextStatus(loan.getStatus().getStatus()));
-		/*persistence layer operations*/
 	}
 
 	public Status getStatus() {

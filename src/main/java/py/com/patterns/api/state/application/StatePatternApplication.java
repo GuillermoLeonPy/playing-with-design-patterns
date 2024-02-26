@@ -17,7 +17,7 @@ public class StatePatternApplication {
 		log.info("\n >>>>>>>>>>>>>>>>>>>"
 				+"\n StatePatternApplication"
 				+"\n >>>>>>>>>>>>>>>>>>>");
-
+		//the context is loan
 		Loan loan = new Loan();
 		loan.updateData("CI", "123456789");
 		loan.updateData("FULL_NAME", "JOHN CONNOR");
