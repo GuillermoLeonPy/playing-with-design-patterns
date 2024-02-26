@@ -123,6 +123,8 @@ public class FileHistory {
 		fileLifeCycle.add(Status.READY_FOR_DELIVER);
 		fileLifeCycle.add(Status.DELIVERED);
 	}
-	
-	
+
+	public Map<Status, File> getFileHistory() {
+		return fileHistory;
+	}	
 }

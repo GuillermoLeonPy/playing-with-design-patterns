@@ -19,19 +19,34 @@ public class MementoApplication {
 				+"\n >>>>>>>>>>>>>>>>>>>");
 		
 		File file = new File("initial file content");
+		file.addProperty("file_name", "notes.txt");
+		file.addProperty("creation_date", "2018-01-01");
+		file.addProperty("creator", "jcaceres");
+		file.addProperty("owner", "jcaceres");
 		FileHistory careTaker = new FileHistory(file);
-		file.setContent("update #1");
+		file.setContent("update #1");		
+		file.addProperty("last_update_date", "2018-01-03");
 		saveFile(careTaker, file);
 		file.setContent("update #2");
+		file.addProperty("last_update_date", "2018-01-10");
+		file.addProperty("owner", "lmartinez");
 		saveFile(careTaker, file);
 		file.setContent("update #3");
+		file.addProperty("owner", "alopez");
+		file.addProperty("last_update_date", "2018-01-21");
 		saveFile(careTaker, file);
 		file.setContent("update #4");
+		file.addProperty("owner", "sgonzalez");
+		file.addProperty("last_update_date", "2018-02-04");
 		saveFile(careTaker, file);
-		
+		printAllSavedStatesObjects(careTaker);
 	}
 	
 	private static void saveFile(FileHistory careTaker, File file) {
 		careTaker.saveFile(file);		
+	}
+	
+	private static void printAllSavedStatesObjects(FileHistory careTaker) {
+		careTaker.getFileHistory().forEach((status,file) -> {System.out.println("\n status key: " + status + "\n recorded object: " + file.toString());});
 	}
 }
