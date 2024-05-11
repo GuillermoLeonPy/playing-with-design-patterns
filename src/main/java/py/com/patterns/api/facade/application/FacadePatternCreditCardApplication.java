@@ -21,6 +21,7 @@ public class FacadePatternCreditCardApplication {
 		cardData.put(CommonCreditCardOperation.CARD_OPERATION_COMMERCE_ID_DATA_KEY, UUID.randomUUID().toString());
 		cardData.put(CommonCreditCardOperation.CARD_OPERATION_CURRENCY_ID_DATA_KEY, "USD");
 		cardData.put(CommonCreditCardOperation.CARD_OPERATION_AMOUNT_DATA_KEY, BigDecimal.TEN);
+		cardData.put(CommonCreditCardOperation.CARD_PROVIDER_DATA_KEY, CommonCreditCardOperation.CreditCardProvider.AMERICAN_EXPRESS);
 		return cardData;
 	}
 
